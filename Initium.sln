@@ -4,6 +4,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{BA1B5D09
 ProjectSection(SolutionItems) = preProject
 	Build\build.cake = Build\build.cake
 	Build\build.ps1 = Build\build.ps1
+	Build\build.sh = Build\build.sh
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{77F8276B-920A-45A4-8F10-5D9DF26E6062}"
