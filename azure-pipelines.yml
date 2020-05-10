@@ -1,0 +1,32 @@
+pool:
+  vmImage: ubuntu-latest
+steps:
+  - task: SonarCloudPrepare@1
+    inputs:
+      SonarCloud: Analyze "project"
+      organization: 'project-initium'
+      scannerMode: MSBuild
+      projectKey: 'initium-empty'
+      extraProperties: |
+        sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml
+  - task: Cake@0
+    inputs:
+      script: Build/build.cake
+      target: Default
+      verbosity: Verbose
+  - task: PublishTestResults@2
+    displayName: Publish Test Results coverage/xunit-report.xml
+    inputs:
+      testResultsFormat: XUnit
+      testResultsFiles: '**/xunit-report.xml'
+    continueOnError: true
+  - task: PublishCodeCoverageResults@1
+    displayName: Publish code coverage from coverage/cobertura-coverage.xml
+    inputs:
+      codeCoverageTool: Cobertura
+      summaryFileLocation: build/build-artifacts/cover/coverage.cobertura.xml
+    continueOnError: true
+  - task: SonarCloudAnalyze@1
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'

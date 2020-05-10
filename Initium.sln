@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{BA1B5D09-D37F-454D-91EC-13943288839E}"
+ProjectSection(SolutionItems) = preProject
+	Build\build.cake = Build\build.cake
+	Build\build.ps1 = Build\build.ps1
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{77F8276B-920A-45A4-8F10-5D9DF26E6062}"
+ProjectSection(SolutionItems) = preProject
+	.gitignore = .gitignore
+	LICENSE = LICENSE
+	README.md = README.md
+	azure-pipelines.yml = azure-pipelines.yml
+	CHANGELOG.md = CHANGELOG.md
+	CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+	CONTRIBUTING.md = CONTRIBUTING.md
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{333582C6-4825-41D5-94DF-D66BCB0B4DA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CFAEE451-C60E-4AB1-98BF-14EE198C51F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Initium.Tests", "Tests\Initium.Tests\Initium.Tests.csproj", "{2223F978-1BEE-4D5B-8093-782ABE6F9D9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0AF48B23-7E24-42D2-BFE7-7910482D9469}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Initium.Shared", "Shared\Initium.Shared\Initium.Shared.shproj", "{F11EF8AD-550A-4DA8-8421-303AFD3FC35C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2223F978-1BEE-4D5B-8093-782ABE6F9D9C} = {CFAEE451-C60E-4AB1-98BF-14EE198C51F0}
+		{F11EF8AD-550A-4DA8-8421-303AFD3FC35C} = {0AF48B23-7E24-42D2-BFE7-7910482D9469}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2223F978-1BEE-4D5B-8093-782ABE6F9D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2223F978-1BEE-4D5B-8093-782ABE6F9D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2223F978-1BEE-4D5B-8093-782ABE6F9D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2223F978-1BEE-4D5B-8093-782ABE6F9D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
