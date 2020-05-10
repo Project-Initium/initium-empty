@@ -12,6 +12,7 @@ steps:
   - task: Bash@3
     inputs:
       filePath: './Build/build.sh'
+      workingDirectory: './Build'
   - task: PublishTestResults@2
     displayName: Publish Test Results coverage/xunit-report.xml
     inputs:
