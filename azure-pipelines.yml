@@ -6,6 +6,7 @@ steps:
       command: 'custom'
       custom: 'tool'
       arguments: 'install Cake.Tool --tool-path ./tools --version 0.37.0'
+      workingDirectory: './Build'
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'Sonar'
