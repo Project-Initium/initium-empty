@@ -1,6 +1,11 @@
 pool:
   vmImage: ubuntu-latest
 steps:
+  - task: DotNetCoreCLI@2
+      inputs:
+        command: 'custom'
+        custom: 'tool'
+        arguments: 'update --global Cake.Tool --version 0.37.0'
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'Sonar'
@@ -9,9 +14,10 @@ steps:
       projectKey: 'initium-empty'
       extraProperties: |
         sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml
-  - task: Bash@3
+  - task: DotNetCoreCLI@2
     inputs:
-      filePath: './Build/build.sh'
+      command: 'custom'
+      custom: 'cake'
       workingDirectory: './Build'
   - task: PublishTestResults@2
     displayName: Publish Test Results coverage/xunit-report.xml
