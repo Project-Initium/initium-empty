@@ -5,7 +5,7 @@ steps:
     inputs:
       command: 'custom'
       custom: 'tool'
-      arguments: 'update --global Cake.Tool --version 0.37.0'
+      arguments: 'install Cake.Tool --tool-path ./tools --version 0.37.0'
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'Sonar'
@@ -14,10 +14,10 @@ steps:
       projectKey: 'initium-empty'
       extraProperties: |
         sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml
-  - task: DotNetCoreCLI@2
+  - task: Bash@3
     inputs:
-      command: 'custom'
-      custom: 'cake'
+      targetType: 'inline'
+      script: './tools/dotnet-cake'
       workingDirectory: './Build'
   - task: PublishTestResults@2
     displayName: Publish Test Results coverage/xunit-report.xml
