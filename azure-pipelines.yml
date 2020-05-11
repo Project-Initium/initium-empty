@@ -2,10 +2,10 @@ pool:
   vmImage: ubuntu-latest
 steps:
   - task: DotNetCoreCLI@2
-      inputs:
-        command: 'custom'
-        custom: 'tool'
-        arguments: 'update --global Cake.Tool --version 0.37.0'
+    inputs:
+      command: 'custom'
+      custom: 'tool'
+      arguments: 'update --global Cake.Tool --version 0.37.0'
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'Sonar'
